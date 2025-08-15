@@ -12,6 +12,7 @@ class Program
             Console.WriteLine("2. Question 2");
             Console.WriteLine("3. Question 3");
             Console.WriteLine("4. Question 4");
+            Console.WriteLine("5. Question 5");
             Console.WriteLine("0. Exit");
             Console.Write("Choose an option: ");
 
@@ -23,6 +24,7 @@ class Program
                 case "2": Question2(); break;
                 case "3": Question3(); break;
                 case "4": Question4(); break;
+                case "5": Question5(); break;
                 case "0": return;
                 default:
                     Console.WriteLine("Invalid choice. Press Enter to try again.");
@@ -103,6 +105,22 @@ class Program
 
         Console.WriteLine($"Tax: {tax:C}");
         Console.WriteLine($"Net Salary: {net:C}");
+        Console.WriteLine("Press Enter to return to menu.");
+        Console.ReadLine();
+    }
+
+    static void Question5()
+    {
+        Console.Clear();
+        Console.WriteLine("=== Question 5 ===");
+        Console.Write("Enter product price: ");
+        decimal price = Convert.ToDecimal(Console.ReadLine());
+
+        Console.Write("Enter quantity: ");
+        int quantity = Convert.ToInt32(Console.ReadLine());
+
+        decimal total = price * quantity;
+        Console.WriteLine($"Total cost: {total:C}");
         Console.WriteLine("Press Enter to return to menu.");
         Console.ReadLine();
     }
