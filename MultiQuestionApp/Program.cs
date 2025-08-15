@@ -9,6 +9,7 @@ class Program
             Console.Clear();
             Console.WriteLine("===== Finance System Menu =====");
             Console.WriteLine("1. Question 1");
+            Console.WriteLine("2. Question 2");
             Console.WriteLine("0. Exit");
             Console.Write("Choose an option: ");
 
@@ -18,6 +19,9 @@ class Program
             {
                 case "1":
                     Question1();
+                    break;
+                case "2":
+                    Question2();
                     break;
                 case "0":
                     return;
@@ -44,6 +48,21 @@ class Program
 
         decimal interest = principal * (rate / 100) * years;
         Console.WriteLine($"Simple Interest: {interest:C}");
+        Console.WriteLine("Press Enter to return to menu.");
+        Console.ReadLine();
+    }
+
+    static void Question2()
+    {
+        Console.Clear();
+        Console.WriteLine("=== Question 2 ===");
+        Console.Write("Enter amount in USD: ");
+        decimal usd = Convert.ToDecimal(Console.ReadLine());
+
+        decimal exchangeRate = 12.5m; // example rate
+        decimal converted = usd * exchangeRate;
+
+        Console.WriteLine($"Equivalent in local currency: {converted:C}");
         Console.WriteLine("Press Enter to return to menu.");
         Console.ReadLine();
     }
