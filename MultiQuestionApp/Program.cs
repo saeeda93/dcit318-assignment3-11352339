@@ -11,6 +11,7 @@ class Program
             Console.WriteLine("1. Question 1");
             Console.WriteLine("2. Question 2");
             Console.WriteLine("3. Question 3");
+            Console.WriteLine("4. Question 4");
             Console.WriteLine("0. Exit");
             Console.Write("Choose an option: ");
 
@@ -21,6 +22,7 @@ class Program
                 case "1": Question1(); break;
                 case "2": Question2(); break;
                 case "3": Question3(); break;
+                case "4": Question4(); break;
                 case "0": return;
                 default:
                     Console.WriteLine("Invalid choice. Press Enter to try again.");
@@ -84,6 +86,23 @@ class Program
             Console.WriteLine("Number of people must be greater than zero.");
         }
 
+        Console.WriteLine("Press Enter to return to menu.");
+        Console.ReadLine();
+    }
+
+    static void Question4()
+    {
+        Console.Clear();
+        Console.WriteLine("=== Question 4 ===");
+        Console.Write("Enter monthly salary: ");
+        decimal salary = Convert.ToDecimal(Console.ReadLine());
+
+        decimal taxRate = 0.15m;
+        decimal tax = salary * taxRate;
+        decimal net = salary - tax;
+
+        Console.WriteLine($"Tax: {tax:C}");
+        Console.WriteLine($"Net Salary: {net:C}");
         Console.WriteLine("Press Enter to return to menu.");
         Console.ReadLine();
     }
